@@ -87,8 +87,8 @@ namespace naim_ESP8266ThingSpeak {
     export function HTTPGet(url: string, port: number) {
         let inputString = ""
         serial.redirect(
-            SerialPin.P0,
-            SerialPin.P1,
+            SerialPin.P8,
+            SerialPin.P12,
             BaudRate.BaudRate115200
         )
         serial.setWriteLinePadding(0)
