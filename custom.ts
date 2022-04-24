@@ -94,8 +94,8 @@ namespace naim_ESP8266ThingSpeak {
         serial.setWriteLinePadding(0)
         serial.setTxBufferSize(200)
         serial.setRxBufferSize(200)
-       // serial.writeLine("GET," + url + "," + port)
- serial.writeLine(url + port)
+        serial.writeLine("GET," + url + "," + port)
+ 
 
         while (1) {
             inputString += serial.readString()
