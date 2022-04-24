@@ -87,14 +87,16 @@ namespace naim_ESP8266ThingSpeak {
     export function HTTPGet(url: string, port: number) {
         let inputString = ""
         serial.redirect(
-            SerialPin.P8,
-            SerialPin.P12,
+            SerialPin.P0,
+            SerialPin.P1,
             BaudRate.BaudRate115200
         )
         serial.setWriteLinePadding(0)
         serial.setTxBufferSize(200)
         serial.setRxBufferSize(200)
-        serial.writeLine("GET," + url + "," + port)
+       // serial.writeLine("GET," + url + "," + port)
+ serial.writeLine(url + port)
+
         while (1) {
             inputString += serial.readString()
             if (inputString.includes("HTTP_GET_SUCCESS")) {
